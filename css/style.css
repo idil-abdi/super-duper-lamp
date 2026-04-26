@@ -7,14 +7,20 @@
 body {
   margin: 1rem;
   background: linear-gradient(white, rgb(0, 53, 213)) no-repeat;
-  height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header {
-  margin: 1rem;
+  margin-top: 1rem;
   text-decoration: underline;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.lives {
+  margin: 1rem;
+  display: flex;
+  justify-content: end;
 }
 
 .game {
@@ -24,7 +30,6 @@ body {
 .game .main-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: 1px solid black;
   border-radius: 20px;
   padding-bottom: 1rem;
@@ -32,6 +37,7 @@ body {
 .game .main-container .main-game-container {
   display: grid;
   grid-template-columns: auto auto auto;
+  column-gap: 3px;
   padding: 0 1rem;
 }
 
@@ -39,7 +45,7 @@ body {
   margin: 0;
 }
 .row .col {
-  padding: 3px;
+  padding-bottom: 3px;
   margin: 0;
 }
 
@@ -78,6 +84,26 @@ body {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
+}
+
+.score-display {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: end;
+}
+
+.btn {
+  width: 30%;
+  margin: 0 1rem;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
 }
 
 @media screen and (min-width: 600px) {
