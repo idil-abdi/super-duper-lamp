@@ -46,6 +46,7 @@ body {
 .flip-card {
   width: 80px;
   height: 80px;
+  cursor: pointer;
 }
 .flip-card .inner {
   height: 100%;
@@ -71,10 +72,6 @@ body {
 
 .stitchsize {
   width: 80px;
-}
-
-.flip-card:hover .inner {
-  transform: rotateY(180deg);
 }
 
 .img-div {
