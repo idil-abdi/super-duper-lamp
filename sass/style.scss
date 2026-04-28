@@ -41,19 +41,20 @@ body{
             display: grid;
             grid-template-columns: auto auto auto;
             column-gap: 3px;
+            row-gap: 3px;
             padding: 0 1rem;
         }
     }
 }
 
-.row {
-    margin: 0;
+// .row {
+//     margin: 0;
 
-    .col {
-        padding-bottom: 3px;
-        margin: 0;
-    }
-}
+//     .col {
+//         padding-bottom: 3px;
+//         margin: 0;
+//     }
+// }
 
 
 .flip-card {
