@@ -9,6 +9,7 @@ body{
     // background: lightblue url("../img/flower-removebg-preview.png") ;
     background: linear-gradient(white, rgb(0, 53, 213)) no-repeat;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
 }
 
 .header{
@@ -21,22 +22,28 @@ body{
 .lives{
     margin: 1rem;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
-
+    
 .game{
     display: flex;
     justify-content: center;
 
     .main-container{
-        display: flex;
-        flex-direction: column;
-        // gap: 10px;
-        // align-items: center;
         border: 1px solid black;
         border-radius: 20px;
-        padding-bottom: 1rem;
+        padding: 1rem;
 
+        .introduction {
+            // display: none;
+            padding: 0 0.5rem ;
+            margin: 1rem auto;
+            width: 278px;
+        }
+
+        .game-board{
+          display: none;
+        }
         .main-game-container{
             display: grid;
             grid-template-columns: auto auto auto;
@@ -46,16 +53,6 @@ body{
         }
     }
 }
-
-// .row {
-//     margin: 0;
-
-//     .col {
-//         padding-bottom: 3px;
-//         margin: 0;
-//     }
-// }
-
 
 .flip-card {
     width: 80px;
@@ -78,8 +75,13 @@ body{
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #2980b9;
+            background-color: rgb(41, 128, 185);
+
+            &:hover {
+                background-color: rgba(41,128,185, 0.6);
+            }
         }
+
         .back {
             background-color: #bbb;
             transform: rotateY(180deg);
@@ -90,6 +92,7 @@ body{
 .stitchsize {
     width: 80px;
 }
+
 
 .img-div{
     display: flex;
@@ -104,14 +107,14 @@ body{
     // gap: 30px;
 }
 
-.btn-container{
-    display: flex;
-    justify-content: end;
-}
+// .btn-container{
+//     display: flex;
+//     justify-content: end;
+// }
 
 .btn {
-    width: 30%;
-    margin: 0 1rem;
+    width: 100%;
+    margin: 10px 0;
     padding: 10px;
     background-color: #fff;
     border: none;

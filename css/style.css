@@ -8,6 +8,7 @@ body {
   margin: 1rem;
   background: linear-gradient(white, rgb(0, 53, 213)) no-repeat;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100%;
 }
 
 .header {
@@ -20,7 +21,7 @@ body {
 .lives {
   margin: 1rem;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .game {
@@ -28,11 +29,17 @@ body {
   justify-content: center;
 }
 .game .main-container {
-  display: flex;
-  flex-direction: column;
   border: 1px solid black;
   border-radius: 20px;
-  padding-bottom: 1rem;
+  padding: 1rem;
+}
+.game .main-container .introduction {
+  padding: 0 0.5rem;
+  margin: 1rem auto;
+  width: 278px;
+}
+.game .main-container .game-board {
+  display: none;
 }
 .game .main-container .main-game-container {
   display: grid;
@@ -62,7 +69,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2980b9;
+  background-color: rgb(41, 128, 185);
+}
+.flip-card .inner .front:hover {
+  background-color: rgba(41, 128, 185, 0.6);
 }
 .flip-card .inner .back {
   background-color: #bbb;
@@ -85,14 +95,9 @@ body {
   justify-content: space-between;
 }
 
-.btn-container {
-  display: flex;
-  justify-content: end;
-}
-
 .btn {
-  width: 30%;
-  margin: 0 1rem;
+  width: 100%;
+  margin: 10px 0;
   padding: 10px;
   background-color: #fff;
   border: none;

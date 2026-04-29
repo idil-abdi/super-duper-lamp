@@ -10,93 +10,120 @@
     <div class="game">
       <div class="main-container">
         <h1 class="header">Find Stitch</h1>
-        <div class="lives">
-          <p>Lives: <span>💗💗💗</span></p>
-        </div>
+        <div class="introduction">
+              <h2>🎲 Game Setup</h2>
+              <p>
+                Stitch is hiding somewhere in the 3x3 grid… can you find him? You
+                have 3 chances each round to click the right box. The faster you
+                find Stitch, the more points you earn:
+              </p>
+              <ul>
+                <li>⭐ 1st try - 3 points</li>
+                <li>⭐ 2nd try - 2 points</li>
+                <li>⭐ 3rd try - 1 point</li>
+              </ul>
+              <p>
+                Miss all three chances? It's game over! <br> Keep playing through
+                unlimited rounds and try to beat your highest score. <br> Good luck… and
+                start guessing!
+              </p>
+              <button class="btn">Start Game</button>
+            </div>
+        <div class="game-board">
+          <div class="lives">
+            <p>Round: <span id="round">1</span></p>
+            <p>Lives: <span id="lives"></span></p>
+          </div>
 
-        <div class="main-game-container">
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner" id="flipping">
-                <div class="front">?</div>
-                <div class="back"></div>
+          <div class="main-game-container">
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner" id="flipping">
+                  <div class="front">?</div>
+                  <div class="back">
+                    <img
+                      class="stitchsize"
+                      src="./img/EmojiStitch1.png"
+                      alt="stitch-emoji"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner">
+                  <div class="front">?</div>
+                  <div class="back"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner">
+                  <div class="front">?</div>
+                  <div class="back"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner">
+                  <div class="front">?</div>
+                  <div class="back"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner">
+                  <div class="front">?</div>
+                  <div class="back"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner">
+                  <div class="front">?</div>
+                  <div class="back"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner">
+                  <div class="front">?</div>
+                  <div class="back"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner">
+                  <div class="front">?</div>
+                  <div class="back"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="flip-card">
+                <div class="inner">
+                  <div class="front">?</div>
+                  <div class="back"></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner">
-                <div class="front">?</div>
-                <div class="back"></div>
-              </div>
-            </div>
+          <div class="score-display">
+            <p>Score: <span id="score"></span></p>
+            <p>Highscore: <span id="high">0</span></p>
           </div>
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner">
-                <div class="front">?</div>
-                <div class="back"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner">
-                <div class="front">?</div>
-                <div class="back"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner">
-                <div class="front">?</div>
-                <div class="back"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner">
-                <div class="front">?</div>
-                <div class="back"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner">
-                <div class="front">?</div>
-                <div class="back"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner">
-                <div class="front">?</div>
-                <div class="back"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="flip-card">
-              <div class="inner">
-                <div class="front">?</div>
-                <div class="back"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="score-display">
-          <p>Score: <span>0</span></p>
-          <!-- <p>lives: <span>💗💗💗</span></p> -->
-          <p>Highest Score: <span>532</span></p>
-        </div>
-        <div class="btn-container">
           <button class="btn">restart</button>
+          
         </div>
       </div>
+    </div>
     </div>
 
     <div class="img-div">
