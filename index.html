@@ -8,28 +8,25 @@
   </head>
   <body>
     <div class="game">
-      <div class="main-container">
-        <h1 class="header">Find Stitch</h1>
-        <div class="introduction">
-              <h2>🎲 Game Setup</h2>
-              <p>
-                Stitch is hiding somewhere in the 3x3 grid… can you find him? You
-                have 3 chances each round to click the right box. The faster you
-                find Stitch, the more points you earn:
-              </p>
-              <ul>
-                <li>⭐ 1st try - 3 points</li>
-                <li>⭐ 2nd try - 2 points</li>
-                <li>⭐ 3rd try - 1 point</li>
-              </ul>
-              <p>
-                Miss all three chances? It's game over! <br> Keep playing through
-                unlimited rounds and try to beat your highest score. <br> Good luck… and
-                start guessing!
-              </p>
-              <button class="btn">Start Game</button>
-            </div>
-        <div class="game-board">
+      <div class="game__container">
+        <h1 class="game__title">Find Stitch</h1>
+        <section class="game-intro">
+          <div class="game-intro-content">
+                <p>Stitch is hiding somewhere in the 3x3 grid… can you find him?</p>
+                <p> You have 3 chances each round to click the right box. </p>
+                <p>faster you find Stitch, the more points you earn:</p>
+                <ul class="game-intro_rules">
+                  <li>⭐ 1st try - 3 points</li>
+                  <li>⭐ 2nd try - 2 points</li>
+                  <li>⭐ 3rd try - 1 point</li>
+                </ul>
+                <p> Miss all three chances? It's game over!</p>
+                <p>Keep playing through unlimited rounds and try to beat your highest score.</p>
+                <p>Good luck… and start guessing!</p>
+                <button class="start btn">Start Game</button>
+          </div>
+        </section>
+        <section class="game-board">
           <div class="lives">
             <p>Round: <span id="round">1</span></p>
             <p>Lives: <span id="lives"></span></p>
@@ -119,9 +116,9 @@
             <p>Score: <span id="score"></span></p>
             <p>Highscore: <span id="high">0</span></p>
           </div>
-          <button class="btn">restart</button>
+          <button class="restart btn">restart</button>
           
-        </div>
+        </section>
       </div>
     </div>
     </div>

@@ -3,7 +3,10 @@ const score = document.querySelector('#score')
 const highestScore = document.querySelector('#high')
 const lives = document.querySelector('#lives')
 const gameRounds = document.querySelector('#round')
-
+const startBtn = document.querySelector('.start')
+const restartBtn = document.querySelector('.restart')
+const intro = document.querySelector('.game-intro')
+const gameBoard = document.querySelector('.game-board')
 const backEl = document.querySelectorAll('.back')
 
 // create an object variable to keep track of my state. 
@@ -17,8 +20,12 @@ const game = {
     rounds: 1,
 }
 
+startBtn.addEventListener('click' ,() => {
+    intro.style.display = 'none'
+    gameBoard.style.display = 'block'
+    // console.log('Start Game');
+})
 
-// this function is start the game.
 const initialiseGame = () => {
     // reset the state variable
     game.currentScore = 0,
@@ -42,7 +49,6 @@ const startRound = () => {
     placeStitch()
     
     console.log('Stitch at: ', game.stitchPosition);
-    
 }
 
 cards.forEach((card, index) => {
@@ -96,19 +102,14 @@ const handleCardClick = (index) => {
     }
 }
 
-const updateScoreDisplay = () => {
-    score.innerHTML = game.currentScore
-}
+const updateScoreDisplay = () => score.innerHTML = game.currentScore
 
-const updateHighScoreDisplay = () => {
-    highestScore.innerHTML = game.highScore
-}
-const updateAttemptsDisplay = () => {
-    lives.innerHTML = game.attemptLeft
-}
-const updateRoundDisplay = () => {
-    gameRounds.innerHTML = game.round
-}
+const updateHighScoreDisplay = () => highestScore.innerHTML = game.highScore
+
+const updateAttemptsDisplay = () => lives.innerHTML = game.attemptLeft
+
+const updateRoundDisplay = () => gameRounds.innerHTML = game.round
+
 
 const endRound = (result) => {
     game.isRoundActive = false
@@ -131,10 +132,12 @@ const endRound = (result) => {
         startRound()
         // cards[game.stitchPosition].style.transform = "rotateY(0deg)";
     }, 2000);
-    
+
 }
 
-document.addEventListener('DOMContentLoaded', (e) => {
-    initialiseGame()
+restartBtn.addEventListener('click', () => {
+    intro.style.display = 'block'
+    gameBoard.style.display = 'none'
 })
 
+document.addEventListener('DOMContentLoaded', (e) => initialiseGame())

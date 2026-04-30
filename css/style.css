@@ -11,11 +11,39 @@ body {
   height: 100%;
 }
 
-.header {
+.game {
+  display: flex;
+  justify-content: center;
+}
+.game__container {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 1rem;
+}
+.game__container .main-game-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 3px;
+  row-gap: 3px;
+  padding: 0 1rem;
+}
+.game__title {
   margin-top: 1rem;
   text-decoration: underline;
   text-transform: uppercase;
   text-align: center;
+}
+.game-intro-content {
+  padding: 0 0.5rem;
+  margin: 1rem auto;
+  width: 278px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.game-intro_rules {
+  text-indent: 10px;
+  list-style: none;
 }
 
 .lives {
@@ -24,29 +52,8 @@ body {
   justify-content: space-between;
 }
 
-.game {
-  display: flex;
-  justify-content: center;
-}
-.game .main-container {
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 1rem;
-}
-.game .main-container .introduction {
-  padding: 0 0.5rem;
-  margin: 1rem auto;
-  width: 278px;
-}
-.game .main-container .game-board {
+.game-board {
   display: none;
-}
-.game .main-container .main-game-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 3px;
-  row-gap: 3px;
-  padding: 0 1rem;
 }
 
 .flip-card {
@@ -102,10 +109,9 @@ body {
   background-color: #fff;
   border: none;
   border-radius: 2px;
+  cursor: pointer;
 }
-
-@media screen and (min-width: 600px) {
-  .header {
-    color: red;
-  }
+.btn:hover {
+  border: 1px solid black;
+  background-color: transparent;
 }
