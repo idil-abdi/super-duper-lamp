@@ -32,6 +32,20 @@ The game continues for **unlimited rounds**, and the goal is to **beat your high
 
 ## Programming Language
 
+### HTML
+ - In the body tag, a game container with a title, game instruction and game board
+ - inside the instruction section, i need a texts, list and start button
+ - for the game board section, i need a game status div, a game grid with 9 cards and score div.
+
+---
+
+### CSS
+ - i need the container to be in the center
+ - the grid need to the same 3 by 3 card that filp when clicked 
+ - make sure everything is centered.
+
+---
+
 ### JavaScript Logic
  - When game starts users can click on any of the nine cards
     - once clicked the card flip 

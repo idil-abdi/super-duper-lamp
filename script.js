@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll(".inner");
+const cards = document.querySelectorAll(".card__inner");
 const score = document.querySelector('#score')
 const highestScore = document.querySelector('#high')
 const lives = document.querySelector('#lives')
@@ -6,8 +6,11 @@ const gameRounds = document.querySelector('#round')
 const startBtn = document.querySelector('.start')
 const restartBtn = document.querySelector('.restart')
 const intro = document.querySelector('.game-intro')
-const gameBoard = document.querySelector('.game-board')
-const backEl = document.querySelectorAll('.back')
+const gameBoard = document.querySelector('.game__board')
+const backEl = document.querySelectorAll('.card__back')
+
+// const tries = Number(prompt('How many tries whould you like'))
+// console.log(tries);
 
 // create an object variable to keep track of my state. 
 const game = {
@@ -47,7 +50,6 @@ const startRound = () => {
     
     updateAttemptsDisplay()
     placeStitch()
-    
     console.log('Stitch at: ', game.stitchPosition);
 }
 
@@ -65,15 +67,14 @@ cards.forEach((card, index) => {
 
 const placeStitch = () => {
     backEl.forEach((card) => {
-        card.innerHTML = ''
+            card.innerHTML = 'Not here'
     })
-
     const stitchImage = document.createElement('img')
     stitchImage.src = './img/EmojiStitch1.png'
     stitchImage.classList.add('stitchsize')
 
+    backEl[game.stitchPosition].innerHTML = ''
     backEl[game.stitchPosition].appendChild(stitchImage)
-
 }
 
 const handleCardClick = (index) => {
@@ -102,19 +103,10 @@ const handleCardClick = (index) => {
     }
 }
 
-const updateScoreDisplay = () => score.innerHTML = game.currentScore
-
-const updateHighScoreDisplay = () => highestScore.innerHTML = game.highScore
-
-const updateAttemptsDisplay = () => lives.innerHTML = game.attemptLeft
-
-const updateRoundDisplay = () => gameRounds.innerHTML = game.round
-
-
 const endRound = (result) => {
     game.isRoundActive = false
     console.log('Round Over');
-
+    
     if (result === 'lose') {
         game.currentScore = 0
         updateScoreDisplay()
@@ -124,7 +116,6 @@ const endRound = (result) => {
         game.highScore = game.currentScore;
         updateHighScoreDisplay()
     }    
-
     
     // cards[game.stitchPosition].style.transform = "rotateY(180deg)";
     
@@ -132,8 +123,15 @@ const endRound = (result) => {
         startRound()
         // cards[game.stitchPosition].style.transform = "rotateY(0deg)";
     }, 2000);
-
 }
+
+const updateScoreDisplay = () => score.innerHTML = game.currentScore
+
+const updateHighScoreDisplay = () => highestScore.innerHTML = game.highScore
+
+const updateAttemptsDisplay = () => lives.innerHTML = game.attemptLeft
+
+const updateRoundDisplay = () => gameRounds.innerHTML = game.round
 
 restartBtn.addEventListener('click', () => {
     intro.style.display = 'block'
