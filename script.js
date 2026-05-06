@@ -26,16 +26,17 @@ const game = {
 startBtn.addEventListener('click' ,() => {
     intro.style.display = 'none'
     gameBoard.style.display = 'block'
-    // console.log('Start Game');
+    console.log('Start Game');
+    initialiseGame()
 })
 
 const initialiseGame = () => {
-    // reset the state variable
+    // reset the state variable'
     game.currentScore = 0,
     game.highScore = 0,
     game.attemptLeft  = game.maxAttempt,
     game.isRoundActive = false,
-    game.round = 1
+    game.rounds = 1
     
     updateScoreDisplay()
     updateAttemptsDisplay()
@@ -47,9 +48,11 @@ const startRound = () => {
     game.attemptLeft = game.maxAttempt
     game.stitchPosition = Math.floor(Math.random() * 9)
     game.isRoundActive = true
-    
+    updateRoundDisplay()
     updateAttemptsDisplay()
     placeStitch()
+    console.log(`Round ${game.rounds}`);
+    
     console.log('Stitch at: ', game.stitchPosition);
 }
 
@@ -84,7 +87,7 @@ const handleCardClick = (index) => {
     
     if (game.stitchPosition === index){
         game.currentScore += game.attemptLeft
-        game.round++;
+        game.rounds++;
         updateRoundDisplay()
         updateScoreDisplay()
         endRound()
@@ -96,7 +99,7 @@ const handleCardClick = (index) => {
         updateAttemptsDisplay()
         if (game.attemptLeft === 0) {
             console.log('game over');
-            game.round=1
+            game.rounds = 1
             updateRoundDisplay()
             endRound('lose')
         }
@@ -105,7 +108,7 @@ const handleCardClick = (index) => {
 
 const endRound = (result) => {
     game.isRoundActive = false
-    console.log('Round Over');
+    console.log(`'Round Over'`);
     
     if (result === 'lose') {
         game.currentScore = 0
@@ -131,11 +134,14 @@ const updateHighScoreDisplay = () => highestScore.innerHTML = game.highScore
 
 const updateAttemptsDisplay = () => lives.innerHTML = game.attemptLeft
 
-const updateRoundDisplay = () => gameRounds.innerHTML = game.round
+const updateRoundDisplay = () => gameRounds.innerHTML = game.rounds
 
 restartBtn.addEventListener('click', () => {
     intro.style.display = 'block'
     gameBoard.style.display = 'none'
+    // game.currentScore = 0
+
 })
 
-document.addEventListener('DOMContentLoaded', (e) => initialiseGame())
+// change to something other 
+// document.addEventListener('DOMContentLoaded', (e) => initialiseGame())
