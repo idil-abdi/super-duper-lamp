@@ -58,3 +58,5 @@ The game continues for **unlimited rounds**, and the goal is to **beat your high
     - if user find him on the first try they get 3 points, second try 2 points and last try 1 point. 
     - the game keep strack of scores and log in the highest score.
     - if stitch not found Game Over. and whatever score does the user have will be the highest until high score is beaten
+
+Demo Link: [Find Stitch Game](https://idil-abdi.github.io/super-duper-lamp/)
