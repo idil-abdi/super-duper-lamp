@@ -8,9 +8,10 @@ const restartBtn = document.querySelector('.restart')
 const intro = document.querySelector('.game-intro')
 const gameBoard = document.querySelector('.game__board')
 const backEl = document.querySelectorAll('.card__back')
+const triesInput = document.querySelector('#tries')
 
-// const tries = Number(prompt('How many tries whould you like'))
-// console.log(tries);
+// const userTries = triesInput.value;
+// console.log(triesInput.value);
 
 // create an object variable to keep track of my state. 
 const game = {
@@ -23,7 +24,8 @@ const game = {
     rounds: 1,
 }
 
-startBtn.addEventListener('click' ,() => {
+startBtn.addEventListener('click' ,(e) => {
+    e.preventDefault()
     intro.style.display = 'none'
     gameBoard.style.display = 'block'
     console.log('Start Game');
@@ -31,16 +33,20 @@ startBtn.addEventListener('click' ,() => {
 })
 
 const initialiseGame = () => {
+    const triesValue = Number(triesInput.value)
+
     // reset the state variable'
     game.currentScore = 0,
     game.highScore = 0,
-    game.attemptLeft  = game.maxAttempt,
+    game.attemptLeft  = triesValue
+    game.maxAttempt = triesValue
+    game.attemptLeft = game.maxAttempt
     game.isRoundActive = false,
     game.rounds = 1
     
     updateScoreDisplay()
     updateAttemptsDisplay()
-    
+
     startRound()
 }
 
@@ -89,9 +95,6 @@ const handleCardClick = (index) => {
         updateRoundDisplay()
         updateScoreDisplay()
         endRound()
-        setTimeout(() => {
-            endRound()
-        }, 1000);
         console.log('correct');
     } else {
         console.log('wrong');
@@ -119,8 +122,8 @@ const endRound = (result) => {
     
     if (result === 'lose') {
         game.currentScore = 0
-        updateScoreDisplay()
         game.rounds = 1
+        updateScoreDisplay()
         updateRoundDisplay()
     }
 
@@ -129,15 +132,11 @@ const endRound = (result) => {
         updateHighScoreDisplay()
     }    
     
-    
-    
     setTimeout(() => {
         cards.forEach(card => {
             card.style.transform = "rotateY(0deg)";
         });
-
         startRound();
-
     }, 1000);
 }
 
@@ -152,9 +151,4 @@ const updateRoundDisplay = () => gameRounds.innerHTML = game.rounds
 restartBtn.addEventListener('click', () => {
     intro.style.display = 'block'
     gameBoard.style.display = 'none'
-    // game.currentScore = 0
-
 })
-
-// change to something other 
-// document.addEventListener('DOMContentLoaded', (e) => initialiseGame())

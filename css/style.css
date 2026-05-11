@@ -39,6 +39,13 @@ body {
   text-indent: 10px;
   list-style: none;
 }
+.game-intro #tries {
+  border: none;
+  width: 97px;
+  padding: 5px;
+  border-radius: 2px;
+  text-align: center;
+}
 
 .game__board {
   display: none;

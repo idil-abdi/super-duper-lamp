@@ -23,7 +23,11 @@
                 <p> Miss all three chances? It's game over!</p>
                 <p>Keep playing through unlimited rounds and try to beat your highest score.</p>
                 <p>Good luck… and start guessing!</p>
-                <button class="start btn">Start Game</button>
+                <form action="">
+                  <label for="tries">Choose 1 to 9 tries.</label>
+                  <input type="number" id="tries" min="1" max="9" value="3">
+                </form>
+                <button type="submit" class="start btn">Start Game</button>
           </div>
         </section>
         <section class="game__board">
