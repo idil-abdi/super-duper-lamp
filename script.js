@@ -104,7 +104,7 @@ const handleCardClick = (index) => {
 
             setTimeout(() => {
                 endRound('lose')
-            }, 1000);            
+            }, 1500);            
         } else {
             setTimeout(() => {
                 clickedCard.style.transform =  'rotateY(180deg)';
