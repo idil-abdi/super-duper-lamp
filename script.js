@@ -56,7 +56,9 @@ const startRound = () => {
     game.isRoundActive = true
     updateRoundDisplay()
     updateAttemptsDisplay()
-    placeStitch()
+    setTimeout(() => {
+        placeStitch()
+    }, 200);
     console.log(`Round ${game.rounds}`);
     
     console.log('Stitch at: ', game.stitchPosition);
@@ -107,11 +109,9 @@ const handleCardClick = (index) => {
 
             setTimeout(() => {
                 endRound('lose')
-            }, 1500);            
+            }, 1500);  
         } else {
-            setTimeout(() => {
-                clickedCard.style.transform =  'rotateY(180deg)';
-            }, 1000);
+            clickedCard.style.transform =  'rotateY(180deg)';
         }
     }
 }
