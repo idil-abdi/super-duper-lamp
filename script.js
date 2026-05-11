@@ -59,10 +59,7 @@ const startRound = () => {
 cards.forEach((card, index) => {
     card.addEventListener("click", (e) => {
         card.style.transform = "rotateY(180deg)";
-        
-        setTimeout(() => {
-            card.style.transform = "rotateY(0deg)";
-        }, 1000);
+        if (!game.isRoundActive) return
         
         handleCardClick(index);
     });
@@ -81,27 +78,37 @@ const placeStitch = () => {
 }
 
 const handleCardClick = (index) => {
-    if (!game.isRoundActive) {
-        return
-    }
-    
+    if (!game.isRoundActive) return
+
+    const clickedCard = cards[index]
+    clickedCard.style.transform = 'rotateY(180deg)'
+
     if (game.stitchPosition === index){
         game.currentScore += game.attemptLeft
         game.rounds++;
         updateRoundDisplay()
         updateScoreDisplay()
         endRound()
+        setTimeout(() => {
+            endRound()
+        }, 1000);
         console.log('correct');
     } else {
         console.log('wrong');
         game.attemptLeft--
-        
         updateAttemptsDisplay()
+        
         if (game.attemptLeft === 0) {
             console.log('game over');
-            game.rounds = 1
-            updateRoundDisplay()
-            endRound('lose')
+            cards[game.stitchPosition].style.transform = 'rotateY(180deg)'
+
+            setTimeout(() => {
+                endRound('lose')
+            }, 1000);            
+        } else {
+            setTimeout(() => {
+                clickedCard.style.transform =  'rotateY(180deg)';
+            }, 1000);
         }
     }
 }
@@ -113,6 +120,8 @@ const endRound = (result) => {
     if (result === 'lose') {
         game.currentScore = 0
         updateScoreDisplay()
+        game.rounds = 1
+        updateRoundDisplay()
     }
 
     if (game.currentScore > game.highScore) {
@@ -120,12 +129,16 @@ const endRound = (result) => {
         updateHighScoreDisplay()
     }    
     
-    // cards[game.stitchPosition].style.transform = "rotateY(180deg)";
+    
     
     setTimeout(() => {
-        startRound()
-        // cards[game.stitchPosition].style.transform = "rotateY(0deg)";
-    }, 2000);
+        cards.forEach(card => {
+            card.style.transform = "rotateY(0deg)";
+        });
+
+        startRound();
+
+    }, 1000);
 }
 
 const updateScoreDisplay = () => score.innerHTML = game.currentScore
